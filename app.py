@@ -25,7 +25,8 @@ def predict():
         #vect = bow_vector.transform(data)
         my_prediction = pipeline.predict(data)
         return render_template('result.html',prediction = my_prediction)
-
+    else:
+         return render_template('result.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
