@@ -9,9 +9,9 @@
 	<header>
 		<div class="container">
 		<div id="brandname">
-			Spam Detector App using NLP
+			Email Detector App using NLP
 		</div>
-		<h2>Spam Detector For Email Messages</h2>
+		<h2>Email Detector For Email Messages</h2>
 		
 	</div>
 	</header>
@@ -19,15 +19,13 @@
 	<p style="color:white;font-size:20;text-align: center;"><b>Results for Message</b></p>
 	<div class="results">
 		
-	{% if prediction == 1%}
-	<h1 style="color:red ;text-align: center;">Spam &#128721; </h1>
-	{% elif prediction == 0%}
-	<h1 style="color:green;text-align: center;" >Not a Spam  &#128140; </h1>
+	{% if prediction == 'Abusive' %}
+	<h1 style="color:red ;text-align: center;">Abusive &#128721; </h1>
+	{% elif prediction == 'Non Abusive' %}
+	<h1 style="color:green;text-align: center;" >Not Abusive &#128140; </h1>
 	{% endif %}
 
 	</div>
-
-
 </body>
 
 </html>
