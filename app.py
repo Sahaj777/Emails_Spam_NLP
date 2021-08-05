@@ -6,6 +6,8 @@ pipeline = load("model.joblib")
 model = open('model.pkl','rb')
 app = Flask(__name__)
 
+
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -13,7 +15,7 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     #Alternative Usage of Saved Model
-    import spacy
+    #import spacy
     #nlp = spacy.load('en_core_web_sm')
     #bow_vector = CountVectorizer()
     joblib.dump(pipeline, 'model.pkl')
@@ -26,7 +28,7 @@ def predict():
         my_prediction = pipeline.predict(data)
         return render_template('result.html',prediction = my_prediction)
 
-        return render_template('result.html',prediction = my_prediction)
+    return render_template('result.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
